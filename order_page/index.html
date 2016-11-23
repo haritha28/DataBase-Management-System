@@ -24,6 +24,7 @@
   <div id="table" class="table-editable">
     <span class="table-add glyphicon glyphicon-plus"></span>
     <table class="table">
+      <form action="order.php" method="post">
       <tr>
         <th>Name</th>
         <th>Value</th>
@@ -45,10 +46,16 @@
       </tr>
       <!-- This is our clonable table line -->
       <tr class="hide">
-        <td contenteditable="true">Untitled</td>
-        <td contenteditable="true">undefined</td>
-        <td contenteditable="true">100</td>
-        <td contenteditable="true">2</td>
+        <form action="order.php" method="post">
+          <td contenteditable="true"><input type="text" name="Name" value="Product"></td>
+          <td contenteditable="true"><input type="text" name="Name" value="Value"></td>
+          <td contenteditable="true"><input type="text" name="Name" value="ID">100</td>
+          <td contenteditable="true">2</td>
+        </form>
+
+        <!-- <input type="text" name="firstname" value="Mickey"><br>
+  Last name:<br> -->
+
         <td>
           <span class="table-remove glyphicon glyphicon-remove"></span>
         </td>
