@@ -1,8 +1,8 @@
-﻿create table Product_Details (
+create table Product_Details (
 	Id int primary Key NOT NULL, 
 	Pname char(50),
 	Pcost float NOT NULL,
-	Pcount int );
+	Pcount into );
 alter table Product_Details add Pcategory char(50);
 
 insert into Product_Details values( 1, 'Oreo', 20 , 100 , 'Biscuits');
