@@ -1,18 +1,28 @@
 <?php
 
+    $db_connection = pg_connect(
+    "host=localhost 
+    dbname=postgres 
+    user=postgres      
+    password=postgres ") or die('Could not connect:' . pg_last_error());
+
     $name=$_POST["name"];
     $phone=$_POST["phn"];
 
-    if( $name && $phone)
-    {
-    echo "Welcome: ". $_POST['name']. "<br />";
-    echo "Your Email is: ". $_POST["phn"]. "<br />";
-    } 
+    // if( $name && $phone)
+    // {
+    // echo "Welcome: ". $_POST['name']. "<br />";
+    // echo "Your Email is: ". $_POST["phn"]. "<br />";
+    // } 
 
-    $query = "INSERT INTO Customertable
-              VALUES  ( $name, $phone)";
+    $query =<<<EOF
 
-    $result = pg_query($query);
+        "INSERT into `Customertable` (`cname`, `cphone`)
+              VALUES  ( `$name`, `$phone`)";
+EOF;
+ 
+
+    $result = pg_query($db_connection, $query);
 
     if(!$result){
         $errormessage = pg_last_error();
@@ -24,7 +34,7 @@
 
     
     
-    pg_close(); 
+    pg_close($db_connection); 
 
  
 ?>
