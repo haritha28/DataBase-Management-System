@@ -1,42 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <div class="container">
+        <h2>Add Customer Details</h2>
+        <form action="addcustomer.php" method="post">
 
-<div class="container">
-  <h2>Add Customer Details</h2>
-  <form action="addcustomer.php" method="post">
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" class="form-control" id="name">
+        <!--Input the name of the customer-->
+        <div class="form-group">
+        <input type="text" class="form-control" name ="name">
+        </div>
+
+        <!--Insert the phone number of the customer-->
+        <div class="form-group">
+        <input type="phone" class="form-control" name="phn" >
+        </div>
+
+        <!--Insert the submit button-->
+        <div>
+           <input type="submit" value="Submit">
+        </div>
+
     </div>
-    <div class="form-group">
-      <label for="phone">Phone:</label>
-      <input type="phone" class="form-control" id="phn" >
-    </div>
-    <!-- <div>
-      <label for="phone" id ="gender">Gender:</label><br>
-      <input type="radio" name="genderm" value="male">Male<br>
-      <input type="radio" name="genderf" value="male" >Female<br>
-    </div> -->
-
-
-    <div class="form-group">
-      <label for="date">Date:</label><br>
-      <input type="Date" class"form-control" id="date">
-    </div>
-
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-</div>
-
 </body>
 </html>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Form</title>
+</head>
+<body>
+    <h2>Contact Us</h2>
+    <p>Please fill in this form and send us.</p>
+    <form action="addcustomer.php" method="post">
+        <p>
+            <label for="inputName">Name:<sup>*</sup></label>
+            <input type="text" name="name" id="inputName">
+        </p>
+        <p>
+            <label for="inputEmail">Email:<sup>*</sup></label>
+            <input type="text" name="email" id="inputEmail">
+        </p>
+        <p>
+            <label for="inputSubject">Subject:</label>
+            <input type="text" name="subject" id="inputSubject">
+        </p>
+        <p>
+            <label for="inputComment">Message:<sup>*</sup></label>
+            <textarea name="message" id="inputComment" rows="5" cols="30"></textarea>
+        </p>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
+ -->
