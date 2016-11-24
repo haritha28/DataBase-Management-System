@@ -5,7 +5,6 @@
     user=postgres      
     password=postgres ") or die('Could not connect:' . pg_last_error());
 
-    if ($db_connection) {   
 
     // echo $_POST["name"]; 
     // echo $_POST["email"]; 
@@ -18,11 +17,11 @@
 
     $sql =<<<EOF
 
-          INSERT INTO Product_Details VALUES ($pid , $pname, $pcost, $pcount, 
-          $pcategory );
+          INSERT INTO Product_Details VALUES ($pid , $pname, 
+          $pcost, $pcount, $pcategory );
 EOF;
 
-        $ret = pg_query($db_connection, $sql);
+        $ret = pg_execute($db_connection, $sql);
 
         if(!$ret){
             echo pg_last_error($db_connection);
@@ -30,10 +29,4 @@ EOF;
             echo "Records created successfully\n";
         }
         pg_close($db_connection);   
-
-    } else {   
-
-    echo 'Connection attempt failed.';   
-
-    }   
 ?>
